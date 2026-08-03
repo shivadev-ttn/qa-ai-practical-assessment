@@ -1,593 +1,607 @@
-# AI Prompts – Requirements and Planning
+# AI Prompts – Requirements & Planning
 
-**Prompt:-**
-Below is a e-commerce site for which I want to analyse the requirement and then test planning and strategy (UI vs API, smoke vs regression, etc.) SUT - https://practicesoftwaretesting.com/ Let me know if require any other inputs from my side.
+This document contains AI prompts and responses used for **Requirement Analysis**, **Test Planning**, and **Test Strategy** for both **UI** and **API** testing of the Practice Software Testing application.
 
-**Response:-**
-Requirement Analysis
-Project Type
+---
 
-Application: Practice Software Testing (E-commerce)
+# 1. UI Requirement Analysis & Test Strategy
 
-Domain: Retail / E-Commerce
+## Prompt
 
-Users
+> Below is an e-commerce site for which I want to analyse the requirement and then test planning and strategy (UI vs API, smoke vs regression, etc.)
+>
+> **SUT:** https://practicesoftwaretesting.com/
+>
+> Let me know if require any other inputs from my side.
 
-Guest User
-Registered Customer
-Administrator (Assumed)
-Functional Modules
-Module	Priority	Automation
-Home Page	High	Yes
-Product Listing	High	Yes
-Product Details	High	Yes
-Search	High	Yes
-Filters	High	Yes
-Sorting	High	Yes
-Price Range	High	Yes
-Shopping Cart	Critical	Yes
-Checkout	Critical	Yes
-Payment	Critical	Partial
-Login	High	Yes
-Registration	High	Yes
-Forgot Password	Medium	Yes
-Language Change	Medium	Yes
-User Profile	Medium	Yes
-Orders	Medium	Yes
-Business Rules
-Products
+---
 
-✔ Inventory managed
+## Requirement Analysis
 
-✔ Product can become Out of Stock
+### Project Information
 
-✔ Quantity cannot exceed stock
+| Item | Details |
+|------|---------|
+| Application | Practice Software Testing |
+| Domain | Retail / E-Commerce |
 
-✔ No discounts on products
+### User Roles
 
-Cart
+- Guest User
+- Registered Customer
+- Administrator (Assumed)
 
-Supports
+---
 
-Guest Cart
-Logged-in Cart
-Cart Persistence
-Session Timeout
+## Functional Modules
 
-Business validations
+| Module | Priority | Automation |
+|---------|----------|------------|
+| Home Page | High | ✅ |
+| Product Listing | High | ✅ |
+| Product Details | High | ✅ |
+| Search | High | ✅ |
+| Filters | High | ✅ |
+| Sorting | High | ✅ |
+| Price Range | High | ✅ |
+| Shopping Cart | Critical | ✅ |
+| Checkout | Critical | ✅ |
+| Payment | Critical | Partial |
+| Login | High | ✅ |
+| Registration | High | ✅ |
+| Forgot Password | Medium | ✅ |
+| Language Change | Medium | ✅ |
+| User Profile | Medium | ✅ |
+| Orders | Medium | ✅ |
 
-Quantity cannot exceed inventory
-Cart total updates instantly
-Remove item updates totals
-Cart persists after login
+---
 
+## Business Rules
 
-Checkout
+### Products
 
-Supports
+- Inventory managed
+- Product can become Out of Stock
+- Quantity cannot exceed stock
+- No discounts on products
 
-Shipping Address
-Billing Address
-Coupons
-Taxes
+### Cart
 
+Supports:
 
-Payment
+- Guest Cart
+- Logged-in Cart
+- Cart Persistence
+- Session Timeout
 
-Supports
+Validations:
 
-Multiple payment methods
-Retry payment
-Cancel payment
-Refund
+- Quantity cannot exceed inventory
+- Cart total updates instantly
+- Removing items updates totals
+- Cart persists after login
 
+### Checkout
 
-Authentication
+Supports:
 
-Supports
+- Shipping Address
+- Billing Address
+- Coupons
+- Taxes
 
-Password Policy
-Forgot Password
-Email Verification
+### Payment
 
+Supports:
 
-Search
+- Multiple payment methods
+- Retry payment
+- Cancel payment
+- Refund
 
-Supports
+### Authentication
 
-Partial Search
-Category Search
-Typo Tolerance
+Supports:
 
+- Password Policy
+- Forgot Password
+- Email Verification
 
-Additional Features
-Product Sorting
-Price Range Filter
-Language Change
+### Search
 
+Supports:
 
+- Partial Search
+- Category Search
+- Typo Tolerance
 
-Test Strategy
+### Additional Features
 
-I would divide testing into five major layers.
+- Product Sorting
+- Price Range Filter
+- Language Change
 
-1. UI Testing
-Home
-Navigation
-Hero Banner
-Categories
-Featured Products
-Footer
+---
 
-Product Listing
-Grid Layout
-Product Cards
-Images
-Prices
-Ratings
+# Test Strategy
 
-Filters
-Brand
-Category
-Availability
-Price Range
+## 1. UI Testing
 
-Sorting
-Price Low→High
-Price High→Low
-Name A→Z
-Name Z→A
+### Home
 
-Product Detail
-Images
-Description
-Specifications
-Quantity
-Stock
-Add to Cart
+- Navigation
+- Hero Banner
+- Categories
+- Featured Products
+- Footer
 
-Cart
-Add Item
-Remove Item
-Update Quantity
-Continue Shopping
-Checkout
+### Product Listing
 
-Checkout
-Shipping
-Billing
-Coupon
-Tax
-Order Summary
+- Grid Layout
+- Product Cards
+- Images
+- Prices
+- Ratings
 
-Payment
-Successful Payment
-Failed Payment
-Retry
-Cancel
+### Filters
 
-Language
-Language Switch
-Translation
-Currency (if applicable)
+- Brand
+- Category
+- Availability
+- Price Range
 
+### Sorting
 
-2. API Testing
+- Price Low → High
+- Price High → Low
+- Name A → Z
+- Name Z → A
 
-API coverage should include
+### Product Details
 
-Authentication
-Login
-Register
-Forgot Password
+- Images
+- Description
+- Specifications
+- Quantity
+- Stock
+- Add to Cart
 
-Products
-Get Products
-Product Detail
-Search
-Filters
+### Cart
 
-Cart
-Add Item
-Update Quantity
-Delete Item
+- Add Item
+- Remove Item
+- Update Quantity
+- Continue Shopping
+- Checkout
 
-Checkout
-Shipping
-Tax
-Coupon
+### Checkout
 
-Payment
-Payment Request
-Payment Status
-Retry
-Refund
+- Shipping
+- Billing
+- Coupon
+- Tax
+- Order Summary
 
-Validation
-Status Codes
-Response Time
-Schema
-Error Handling
-Authentication
-Authorization
+### Payment
 
+- Successful Payment
+- Failed Payment
+- Retry
+- Cancel
 
-3. Smoke Testing
+### Language
+
+- Language Switch
+- Translation
+- Currency (if applicable)
+
+---
+
+## 2. API Testing
+
+Validate APIs for:
+
+- Authentication
+- Products
+- Cart
+- Checkout
+- Payment
+
+Verification includes:
+
+- Status Codes
+- Response Time
+- Response Schema
+- Error Handling
+- Authentication
+- Authorization
+
+---
+
+## 3. Smoke Testing
 
 Run after every deployment.
 
-Include only business-critical flow.
+### Critical Flow
 
-Example
+- Home Page
+- Login
+- Search
+- Product Details
+- Add to Cart
+- Checkout
+- Payment
+- Logout
 
-Home Page Opens
-Login
-Search
-Product Opens
-Add Cart
-Checkout
-Payment
-Logout
+> Approx. **20–30 test cases**
 
-Approximately 20–30 test cases.
+---
 
-
-4. Sanity Testing
+## 4. Sanity Testing
 
 Executed after bug fixes.
 
-Example
+### Example
 
-Developer fixes Search
+**Search Fix**
 
-Run
+- Search
+- Filter
+- Sorting
 
-Search
-Filter
-Sorting
+**Cart Fix**
 
-Developer fixes Cart
+- Add Item
+- Remove Item
+- Quantity
+- Total Calculation
 
-Run
+---
 
-Add
-Remove
-Quantity
-Total
+## 5. Regression Testing
 
+### Functional
 
-5. Regression Testing
+- Login
+- Registration
+- Search
+- Filters
+- Sorting
+- Cart
+- Checkout
+- Payment
+- Orders
 
-Complete application validation.
+### UI
 
-Include
+- Responsive Design
+- Browser Compatibility
+- Alignment
+- Fonts
+- Images
+- Links
 
-Functional
-Login
-Registration
-Search
-Filter
-Sorting
-Cart
-Checkout
-Payment
-Orders
+### API
 
-UI
-Responsive
-Browser Compatibility
-Alignment
-Font
-Images
-Links
+- CRUD Operations
+- Authentication
+- Negative Scenarios
 
-API
-CRUD
+### Security
+
+- Session Timeout
+- Authorization
+- SQL Injection
+- XSS
+
+### Performance
+
+- Page Load
+- API Response Time
+- Image Loading
+
+### Accessibility
+
+- Keyboard Navigation
+- Screen Reader
+- Contrast
+- Focus Order
+
+---
+
+# Automation Strategy
+
+| Suite | Automation | Frequency |
+|--------|------------|-----------|
+| Smoke | 100% | Every Build |
+| Sanity | 100% | After Bug Fix |
+| Critical Regression | 90% | Every Sprint |
+| Full Regression | 70–80% | Before Release |
+| Visual Regression | Key Pages | Every UI Release |
+| API Regression | 100% | Every Build |
+
+---
+
+# Risk-Based Testing Priority
+
+| Priority | Features |
+|-----------|----------|
+| 🔴 P0 | Login, Cart, Checkout, Payment |
+| 🟠 P1 | Search, Filters, Sorting, Product Details |
+| 🟡 P2 | Registration, Profile, Orders, Coupons |
+| 🟢 P3 | Language, Footer, Contact, Static Pages |
+
+---
+
+# Suggested Test Execution Flow
+
+```text
+Smoke Testing
+      │
+      ▼
 Authentication
-Negative Tests
-
-Security
-Session Timeout
-Authorization
-SQL Injection
-XSS
-Direct URL Access
-
-Performance
-Page Load
-API Response
-Image Loading
-
-Accessibility
-Keyboard
-Screen Reader
-Contrast
-Focus Order
-
-
-
-Automation Strategy
-
-Since you're using Playwright + JavaScript, I would structure automation as follows:
-
-Suite	Automation %	Frequency
-Smoke	100%	Every build
-Sanity	100%	After bug fixes
-Critical Regression	90%	Every sprint
-Full Regression	70–80%	Before release
-Visual Regression	Key pages	Every UI release
-API Regression	100%	Every build
-
-
-Risk-Based Testing Priority
-Priority	Features
-🔴 P0	Login, Cart, Checkout, Payment
-🟠 P1	Search, Filters, Sorting, Product Details
-🟡 P2	Registration, Profile, Orders, Coupons
-🟢 P3	Language, Footer, Contact, Static Pages
-
-
-Suggested Test Execution Order
-Build Validation (Smoke)
-        │
-        ▼
-Authentication
-        │
-        ▼
+      │
+      ▼
 Product Catalogue
-        │
-        ▼
+      │
+      ▼
 Search + Filters + Sorting
-        │
-        ▼
+      │
+      ▼
 Product Details
-        │
-        ▼
+      │
+      ▼
 Shopping Cart
-        │
-        ▼
+      │
+      ▼
 Checkout
-        │
-        ▼
+      │
+      ▼
 Payment
-        │
-        ▼
+      │
+      ▼
 Order Confirmation
-        │
-        ▼
-Regression
-        │
-        ▼
+      │
+      ▼
+Regression Testing
+      │
+      ▼
 Cross-Browser & Responsive
-        │
-        ▼
+      │
+      ▼
 Accessibility
-        │
-        ▼
+      │
+      ▼
 Performance
+```
 
+---
 
+# 2. API Requirement Analysis & Test Strategy
 
+## Prompt
 
-**
-Prompt for API requirement
----------------------------**
+> Below is a Swagger API collection URL for which I want to analyze the requirement and then test planning and strategy.
+>
+> **API Documentation:** https://api.practicesoftwaretesting.com/api/documentation
+>
+> Let me know if require any other inputs from my side.
 
+---
 
-**Prompt:-**
-Below is a swagger API collection URL for which I want to analyze the requirement and then test planning and strategy. 
+## Requirement Analysis
 
-API Test - https://api.practicesoftwaretesting.com/api/documentation
+Swagger documentation is sufficient to:
 
-Let me know if require any other inputs from my side.
+- Analyze API contracts
+- Understand business modules
+- Identify API dependencies
+- Plan API testing strategy
+- Create API test cases
 
-**Response:-**
-Yes. The Swagger/OpenAPI documentation is sufficient for me to start. I can analyze the API contract, derive functional requirements, identify risks, and create a comprehensive API Test Strategy and Test Plan. The Practice Software Testing API exposes domains such as Brand, Cart, Category, Contact, Favorite, Image, Invoice, Payment, Product, Product Spec, Report, TOTP, and User, which provides enough coverage for a complete API testing exercise.
+### Key API Modules
 
-What I'll deliver
+- Authentication
+- User
+- Product
+- Category
+- Brand
+- Cart
+- Favorites
+- Payment
+- Invoice
+- Reports
+- Images
+- Contact
+- TOTP
 
-I can prepare the following documents in sequence:
+---
 
-Phase	Deliverable	Description
-1	Requirement Analysis	Business modules, API flows, dependencies, assumptions
-2	API Inventory	Endpoint categorization (GET, POST, PUT, PATCH, DELETE)
-3	Test Strategy	Scope, objectives, approach, tools, environments, risks
-4	Test Planning	Timeline, entry/exit criteria, estimation, deliverables
-5	Test Scenarios	High-level scenarios for every endpoint
-6	Detailed Test Cases	Positive, Negative, Boundary, Error handling, Security
-7	Automation Strategy	Postman/Newman or Playwright API or REST Assured
-8	Traceability Matrix	Requirement ↔ Endpoint ↔ Test Case mapping
-9	Defect Checklist	Common API defects to look for
-10	Regression Suite	Smoke vs Regression API suite
+# Deliverables
 
+| Phase | Deliverable |
+|--------|-------------|
+| 1 | Requirement Analysis |
+| 2 | API Inventory |
+| 3 | Test Strategy |
+| 4 | Test Plan |
+| 5 | Test Scenarios |
+| 6 | Detailed Test Cases |
+| 7 | Automation Strategy |
+| 8 | Traceability Matrix |
+| 9 | Defect Checklist |
+| 10 | Regression Suite |
 
-My approach
+---
 
-Step 1 — Requirement Analysis
+# Testing Approach
 
-I'll analyze
+## Step 1 – Requirement Analysis
 
-API resources
-Authentication
-Authorization
-Relationships between APIs
-CRUD operations
-Request models
-Response models
-Status codes
-Validation rules
-Error responses
+Analyze:
 
+- API Resources
+- Authentication
+- Authorization
+- CRUD Operations
+- Request & Response Models
+- Status Codes
+- Validation Rules
+- Error Responses
 
-Step 2 — Functional Modules
+---
 
-From the Swagger, I expect modules like:
+## Step 2 – Functional Modules
 
-User Management
-Authentication
-Products
-Categories
-Brands
-Cart
-Favorites
-Checkout
-Payment
-Invoice
-Reports
-Images
-Contact
-TOTP Authentication
+- User Management
+- Authentication
+- Products
+- Categories
+- Brands
+- Cart
+- Favorites
+- Checkout
+- Payment
+- Invoice
+- Reports
+- Images
+- Contact
+- TOTP Authentication
 
-These will become independent test areas.
+---
 
+## Step 3 – Test Strategy
 
-Step 3 — Test Strategy
+Include:
 
-The strategy will include
+- Scope
+- Objectives
+- Test Types
+- Automation Scope
+- Risks
+- Assumptions
+- Entry & Exit Criteria
 
-Scope
-Objectives
-Test Levels
-Test Types
-API Validation
-Data Validation
-Security Validation
-Performance considerations
-Automation scope
-Risks
-Assumptions
-Entry & Exit Criteria
+---
 
+## Step 4 – Test Design
 
-Step 4 — Test Design
+Cover:
 
-Every endpoint will have
+- Positive Testing
+- Negative Testing
+- Boundary Testing
+- Mandatory Field Validation
+- Invalid Data Types
+- Invalid Formats
+- Missing Headers
+- Invalid Authorization
+- Expired Tokens
+- SQL Injection
+- XSS
+- Rate Limiting
+- Duplicate Data
+- Pagination
+- Sorting
+- Filtering
 
-Positive tests
-Negative tests
-Boundary tests
-Mandatory field validation
-Optional field validation
-Invalid datatype
-Invalid format
-Missing headers
-Invalid Authorization
-Expired Token
-SQL Injection checks
-XSS payloads
-Rate limiting
-Duplicate data
-Idempotency
-Pagination
-Sorting
-Filtering
-Error responses
+---
 
+## Step 5 – API Validation
 
-Step 5 — API Coverage Matrix
+Validate:
 
-For each endpoint I'll validate
+- Request Headers
+- Request Body
+- Query Parameters
+- Path Parameters
+- Response Schema
+- Response Body
+- HTTP Status Codes
+- Response Headers
+- Business Rules
 
-Request headers
-Request body
-Query parameters
-Path parameters
-Response schema
-Response body
-HTTP status
-Response headers
-Database consistency (conceptual)
-Business rules
+---
 
+## Step 6 – Automation Strategy
 
-Step 6 — Automation Strategy
+Automation options:
 
-I can also generate
+- Postman
+- Newman
+- Playwright API
+- REST Assured
 
-Postman Collection
-Newman CLI execution
-JavaScript test scripts
-Environment variables
-Data-driven execution
-CI/CD execution strategy
+---
 
-or
+## Additional Inputs (Optional)
 
-Playwright API framework (JavaScript)
+To improve planning, provide:
 
-since you've been working with Playwright.
+1. Project Goal
+   - Interview Assignment
+   - Real Project
+   - Learning
 
-Inputs I'd like from you
+2. Expected Deliverables
+   - Test Strategy
+   - Test Plan
+   - Test Cases
+   - Automation Framework
 
-The Swagger is enough to start, but the following will help make the plan more realistic:
+3. Testing Depth
+   - Basic (40–60)
+   - Intermediate (100–150)
+   - Comprehensive (250+)
 
-1. Goal of this assignment
+4. Preferred Format
+   - Markdown
+   - Excel
+   - Word
+   - PDF
+   - Confluence
 
-Examples:
+---
 
-Interview assignment
-Company assessment
-Real project
-Learning exercise
-2. Expected deliverable
+# Simplified API Test Strategy
 
-For example:
+For most API testing assignments, a concise strategy is sufficient.
 
-Test Strategy document
-Test Plan
-Test Cases
-Postman Collection
-Automation Framework
-Defect Report
-3. Testing depth
+## Core Sections
 
-Choose one:
+| Section | Description |
+|----------|-------------|
+| Requirement Analysis | Understand API modules, authentication, business flows, and dependencies |
+| Test Strategy | Scope, objectives, test types, tools, and risks |
+| Test Planning | Entry/Exit criteria, environment, assumptions, deliverables |
+| Test Scenarios | Positive, Negative, Boundary, Authentication, Response Validation |
+| Automation | High-level automation using Postman/Newman or Playwright API |
 
-Basic (40–60 test cases)
-Intermediate (100–150 test cases)
-Comprehensive (250+ test cases)
-4. Preferred format
-Excel
-Word
-Markdown
-PDF
-Confluence format
+---
 
+## Key Test Types
 
+- ✅ Functional Testing
+- ✅ Positive Testing
+- ✅ Negative Testing
+- ✅ Boundary Value Testing
+- ✅ Authentication & Authorization
+- ✅ Response Schema Validation
+- ✅ Status Code Validation
+- ✅ Error Handling
+- ✅ Smoke Testing
+- ✅ Regression Testing
 
+---
 
-**Prompt:-**
-I like the details that you shared, but it actually makes it lengthy.
-Can you short it a little bit and consider the important factors for now.
+## Final Deliverables
 
-**Response:-**
-Absolutely. For an API testing assignment or real project, it's better to keep the documentation concise while still covering the essentials.
+- Requirement Analysis
+- API Test Strategy
+- API Test Plan
+- API Test Scenarios / Test Cases
+- Automation Approach (Optional)
 
-Here's a streamlined approach that covers the important aspects without becoming too lengthy.
+---
 
-Section	Description
-1. Requirement Analysis	Understand API modules, authentication, business flows, and dependencies.
-2. Test Strategy	Define scope, objectives, test types (Functional, Negative, Security, Smoke, Regression), tools, and risks.
-3. Test Planning	Entry/Exit criteria, test environment, assumptions, deliverables, and estimation.
-4. Test Scenarios / Test Cases	Cover Positive, Negative, Boundary, Error Handling, Authentication, and Response Validation for each endpoint.
-5. Automation Approach (Optional)	High-level plan for automating the critical APIs using Postman/Newman or Playwright API.
-
-Key Test Types to Include
-✅ Functional Testing
-✅ Positive Testing
-✅ Negative Testing
-✅ Boundary Value Testing
-✅ Authentication & Authorization
-✅ Response Schema Validation
-✅ Status Code Validation
-✅ Error Handling
-✅ Smoke Testing
-✅ Regression Testing
-
-Deliverables
-Requirement Analysis
-API Test Strategy
-API Test Plan
-API Test Scenarios / Test Cases
-(Optional) Automation Approach
-
+> **Note:** This document serves as a concise reference for AI-assisted Requirement Analysis, Test Planning, and Test Strategy for both UI and API testing.
