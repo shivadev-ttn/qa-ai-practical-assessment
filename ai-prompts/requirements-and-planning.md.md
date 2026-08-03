@@ -1,5 +1,6 @@
 # AI Prompts – Requirements and Planning
 
+**Prompt:-**
 Below is a e-commerce site for which I want to analyse the requirement and then test planning and strategy (UI vs API, smoke vs regression, etc.) SUT - https://practicesoftwaretesting.com/ Let me know if require any other inputs from my side.
 
 **Response:-**
@@ -364,3 +365,229 @@ Accessibility
         │
         ▼
 Performance
+
+
+
+
+**
+Prompt for API requirement
+---------------------------**
+
+
+**Prompt:-**
+Below is a swagger API collection URL for which I want to analyze the requirement and then test planning and strategy. 
+
+API Test - https://api.practicesoftwaretesting.com/api/documentation
+
+Let me know if require any other inputs from my side.
+
+**Response:-**
+Yes. The Swagger/OpenAPI documentation is sufficient for me to start. I can analyze the API contract, derive functional requirements, identify risks, and create a comprehensive API Test Strategy and Test Plan. The Practice Software Testing API exposes domains such as Brand, Cart, Category, Contact, Favorite, Image, Invoice, Payment, Product, Product Spec, Report, TOTP, and User, which provides enough coverage for a complete API testing exercise.
+
+What I'll deliver
+
+I can prepare the following documents in sequence:
+
+Phase	Deliverable	Description
+1	Requirement Analysis	Business modules, API flows, dependencies, assumptions
+2	API Inventory	Endpoint categorization (GET, POST, PUT, PATCH, DELETE)
+3	Test Strategy	Scope, objectives, approach, tools, environments, risks
+4	Test Planning	Timeline, entry/exit criteria, estimation, deliverables
+5	Test Scenarios	High-level scenarios for every endpoint
+6	Detailed Test Cases	Positive, Negative, Boundary, Error handling, Security
+7	Automation Strategy	Postman/Newman or Playwright API or REST Assured
+8	Traceability Matrix	Requirement ↔ Endpoint ↔ Test Case mapping
+9	Defect Checklist	Common API defects to look for
+10	Regression Suite	Smoke vs Regression API suite
+
+
+My approach
+
+Step 1 — Requirement Analysis
+
+I'll analyze
+
+API resources
+Authentication
+Authorization
+Relationships between APIs
+CRUD operations
+Request models
+Response models
+Status codes
+Validation rules
+Error responses
+
+
+Step 2 — Functional Modules
+
+From the Swagger, I expect modules like:
+
+User Management
+Authentication
+Products
+Categories
+Brands
+Cart
+Favorites
+Checkout
+Payment
+Invoice
+Reports
+Images
+Contact
+TOTP Authentication
+
+These will become independent test areas.
+
+
+Step 3 — Test Strategy
+
+The strategy will include
+
+Scope
+Objectives
+Test Levels
+Test Types
+API Validation
+Data Validation
+Security Validation
+Performance considerations
+Automation scope
+Risks
+Assumptions
+Entry & Exit Criteria
+
+
+Step 4 — Test Design
+
+Every endpoint will have
+
+Positive tests
+Negative tests
+Boundary tests
+Mandatory field validation
+Optional field validation
+Invalid datatype
+Invalid format
+Missing headers
+Invalid Authorization
+Expired Token
+SQL Injection checks
+XSS payloads
+Rate limiting
+Duplicate data
+Idempotency
+Pagination
+Sorting
+Filtering
+Error responses
+
+
+Step 5 — API Coverage Matrix
+
+For each endpoint I'll validate
+
+Request headers
+Request body
+Query parameters
+Path parameters
+Response schema
+Response body
+HTTP status
+Response headers
+Database consistency (conceptual)
+Business rules
+
+
+Step 6 — Automation Strategy
+
+I can also generate
+
+Postman Collection
+Newman CLI execution
+JavaScript test scripts
+Environment variables
+Data-driven execution
+CI/CD execution strategy
+
+or
+
+Playwright API framework (JavaScript)
+
+since you've been working with Playwright.
+
+Inputs I'd like from you
+
+The Swagger is enough to start, but the following will help make the plan more realistic:
+
+1. Goal of this assignment
+
+Examples:
+
+Interview assignment
+Company assessment
+Real project
+Learning exercise
+2. Expected deliverable
+
+For example:
+
+Test Strategy document
+Test Plan
+Test Cases
+Postman Collection
+Automation Framework
+Defect Report
+3. Testing depth
+
+Choose one:
+
+Basic (40–60 test cases)
+Intermediate (100–150 test cases)
+Comprehensive (250+ test cases)
+4. Preferred format
+Excel
+Word
+Markdown
+PDF
+Confluence format
+
+
+
+
+**Prompt:-**
+I like the details that you shared, but it actually makes it lengthy.
+Can you short it a little bit and consider the important factors for now.
+
+**Response:-**
+Absolutely. For an API testing assignment or real project, it's better to keep the documentation concise while still covering the essentials.
+
+Here's a streamlined approach that covers the important aspects without becoming too lengthy.
+
+Section	Description
+1. Requirement Analysis	Understand API modules, authentication, business flows, and dependencies.
+2. Test Strategy	Define scope, objectives, test types (Functional, Negative, Security, Smoke, Regression), tools, and risks.
+3. Test Planning	Entry/Exit criteria, test environment, assumptions, deliverables, and estimation.
+4. Test Scenarios / Test Cases	Cover Positive, Negative, Boundary, Error Handling, Authentication, and Response Validation for each endpoint.
+5. Automation Approach (Optional)	High-level plan for automating the critical APIs using Postman/Newman or Playwright API.
+
+Key Test Types to Include
+✅ Functional Testing
+✅ Positive Testing
+✅ Negative Testing
+✅ Boundary Value Testing
+✅ Authentication & Authorization
+✅ Response Schema Validation
+✅ Status Code Validation
+✅ Error Handling
+✅ Smoke Testing
+✅ Regression Testing
+
+Deliverables
+Requirement Analysis
+API Test Strategy
+API Test Plan
+API Test Scenarios / Test Cases
+(Optional) Automation Approach
+
