@@ -1,6 +1,8 @@
+# AI Prompts – Requirements and Planning
+
 Below is a e-commerce site for which I want to analyse the requirement and then test planning and strategy (UI vs API, smoke vs regression, etc.) SUT - https://practicesoftwaretesting.com/ Let me know if require any other inputs from my side.
 
-
+**Response:-**
 Requirement Analysis
 Project Type
 
