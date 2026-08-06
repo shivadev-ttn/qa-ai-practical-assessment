@@ -1,0 +1,68 @@
+TC ID,Type,Execution Type,Title,Description,Test Data,Pre-requisite,Test Steps,Expected Output,Actual Output,Status
+TC_001 @Smoke,Positive,Manual/UI,Verify user can register and login successfully,"Verify a new user can register, login and access profile.",Valid user details,User is not registered,"1. Open Home Page.
+2. Click Register.
+3. Register with valid details.
+4. Login using registered credentials.
+5. Navigate to My Profile.",Registration succeeds. User logs in successfully and profile information is displayed correctly.,,
+TC_002 @Smoke,Positive,Manual/UI,Verify complete purchase flow using Cash on Delivery,Validate end-to-end purchase flow including invoice generation.,"Valid login, COD",Registered user,"1. Login.
+2. Search a product.
+3. Open product details.
+4. Add product to cart.
+5. Update quantity. (Cart Page)
+6. Sign In (if the user has not logged in)
+7. Provide billing address.
+8. Select Cash on Delivery on Payment page.
+9. Place order.
+Note - You need to press confirm twice to generate invoice","Order is placed successfully. Invoice is generated and visible under My Invoices.
+
+Note - You need to press confirm twice to generate invoice",,
+TC_003 @Smoke,Positive,Manual/UI,"Verify search, filter and sorting functionality","Verify user can locate products using search, category, price range and sorting.",Product Name: Hammer,Products available,"1. Search for a product.
+2. Apply Category filter.
+3. Apply Price filter.
+4. Apply sorting.","Verify that the products are updated based on the apply category, price filter and sorting.
+
+These are different functionality.",,
+TC_004 @Regression,Negative,Manual/UI,Verify login with invalid credentials,Verify system rejects invalid login attempts.,Invalid email/password,Login page available,"1. Open Login page.
+2. Enter invalid credentials.
+3. Click Login.",Login fails and appropriate validation message is displayed.,,
+TC_005 @Regression,Negative,Manual/UI,Verify checkout without mandatory fields,Verify mandatory checkout fields are validated.,Blank address,User logged with valid creds and present in product in cart,"1. Add product to cart.
+2. Proceed to Checkout.
+3. Leave mandatory fields blank.
+4. Continue.",Mandatory validation messages are displayed and order is not placed.,,
+TC_006 @Regression,Negative,Manual/UI,Verify quantity exceeding available stock,Verify quantity cannot exceed available inventory.,Quantity > Stock,Product available,"1. Open Product.
+2. Enter quantity greater than stock.
+3. Add to Cart.",System prevents adding quantity exceeding stock and shows an appropriate message.,,
+TC_007 @Regression,Edge,Manual/UI,Verify cart persistence after session refresh,Verify cart contents persist after browser refresh/login.,Existing cart,Product added to cart,"1. Add products to cart.
+2. Refresh browser.
+3. Login again if required.
+4. Open Cart.",Previously added products remain in the cart.,,
+TC_008 @Regression,Edge,Manual/UI,Verify language change across pages,Verify selected language persists while navigating the application.,Change language,Home page loaded,"1. Change language.
+2. Navigate to Product page.
+3. Open Cart.
+4. Open Checkout.",Selected language remains applied across all pages.,,
+TC_009 @Regression,Positive,Manual/UI,Verify contact form submission and success message,Verify user can submit the contact form and receive a confirmation message.,"First Name, Last Name, Email, Subject: Customer service, Message: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero.",Contact page available,"1. Open Home Page.
+2. Navigate to Contact page.
+3. Fill in First Name, Last Name, Email, Subject and Message.
+4. Click Send.
+5. Wait for success message.",Success message is displayed: Thanks for your message! We will contact you shortly.,,
+TC_010 @Regression,Positive,Manual/UI,Verify forgot password flow using registered credentials,Verify a registered user can reset password via forgot password flow and login with the updated password.,Registered user email from recent registration; reset password: welcome02,User is registered with valid credentials,"1. Register a user (or use recent registered credentials).
+2. Open Login page.
+3. Click Forgot your Password.
+4. Enter registered email address.
+5. Click Set New Password.
+6. Verify success message.
+7. Login using the reset password (welcome02).",Password reset success message is displayed. User can login successfully with the updated password (welcome02).,,
+TC_UI_1 @Regression,Positive,Manual/UI,Verify site logo is visible,Verify the site logo is visible on the home page navigation.,N/A,Home page available,"1. Open Home Page.
+2. Verify site logo is visible in the navigation bar.",Site logo (navbar brand) is visible on the home page.,,
+TC_UI_2 @Regression,Positive,Manual/UI,Verify product image is visible,Verify product image is displayed on the product detail page.,Any available product from listing,Products available on home page,"1. Open Home Page.
+2. Open any product from the product listing.
+3. Verify product image is visible on the product page.",Product image is visible on the product detail page.,,
+TC_UI_3 @Regression,Positive,Manual/UI,Verify related products section is visible on product page,Verify the Related products section is displayed on any product detail page.,Any available product from listing,Products available on home page,"1. Open Home Page.
+2. Open any product from the product listing.
+3. Verify Related products section is visible.",Related products section is visible on the product detail page.,,
+TC_UI_4 @Regression,Positive,Manual/UI,Verify product listing section is visible on home page,Verify product listing section is displayed on the home page.,N/A,Home page available,"1. Open Home Page.
+2. Verify product listing section is visible with products displayed.",Product listing section is visible on the home page with one or more products.,,
+TC_UI_5 @Regression,Positive,Manual/UI,Verify header practice banner section is visible,Verify the practice banner header section with Testing Guide and Bug Hunting buttons is visible.,N/A,Home page available,"1. Open Home Page.
+2. Verify header section displays ""Practice Black Box Testing & Bug Hunting"".
+3. Verify Testing Guide button is visible.
+4. Verify Bug Hunting button is visible.","Header banner section is visible with text ""Practice Black Box Testing & Bug Hunting"", Testing Guide button and Bug Hunting button.",,

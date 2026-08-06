@@ -1,0 +1,17 @@
+# Dependencies
+**/node_modules/
+
+# Playwright outputs (regenerated on run)
+**/test-results/
+**/reports/
+**/playwright-report/
+
+# Environment & secrets
+**/.env
+
+# Logs
+**/*.log
+
+# OS
+.DS_Store
+Thumbs.db
