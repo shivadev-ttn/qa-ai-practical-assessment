@@ -1,0 +1,16 @@
+{
+  "seededUsers": [
+    {
+      "email": "customer@practicesoftwaretesting.com",
+      "password": "welcome01",
+      "note": "API seeded account from OpenAPI examples"
+    }
+  ],
+  "products": [
+    {
+      "name": "Combination Pliers",
+      "productId": "01KZ5J9VW2H605ZEFYN999AF50",
+      "inStock": true
+    }
+  ]
+}

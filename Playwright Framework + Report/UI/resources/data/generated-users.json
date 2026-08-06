@@ -1,0 +1,16 @@
+{
+  "ui": {
+    "createdAt": "2026-08-06T11:12:54.853Z",
+    "firstName": "John",
+    "lastName": "Carter",
+    "email": "john.carter.20260806_164251@example.com",
+    "password": "PstQa@20260806_164251!"
+  },
+  "api": {
+    "createdAt": "2026-08-06T14:43:54.510Z",
+    "email": "john.doe.20260806_201353@example.com",
+    "password": "PstQa@20260806_201353!",
+    "firstName": "John",
+    "lastName": "Doe"
+  }
+}
